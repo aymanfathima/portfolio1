@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery</title>
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #fff;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3b82f6;
+            color: #fffefe;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Project Screenshot Gallery</h1>
+
+    <div class="gallery">
+        <a href="#img7"><img src="images/image7.png" alt="Screenshot 1"></a>
+        <a href="#img8"><img src="images/image8.png" alt="Screenshot 2"></a>
+        <a href="#img9"><img src="images/image9.png" alt="Screenshot 3"></a>
+        <a href="#img10"><img src="images/image10.png" alt="Screenshot 4"></a>
+        <a href="#img11"><img src="images/image11.png" alt="Screenshot 5"></a>
+        <a href="#img12"><img src="images/image12.png" alt="Screenshot 6"></a>
+         <a href="#img12"><img src="images/image13.png" alt="Screenshot 6"></a>
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+</div>
+
+<!-- Lightbox Views -->
+<div id="img1" class="lightbox">
+    <img src="images/project1.png">
+</div>
+
+<div id="img2" class="lightbox">
+    <img src="images/project2.png">
+</div>
+
+<div id="img3" class="lightbox">
+    <img src="images/project3.png">
+</div>
+
+<div id="img4" class="lightbox">
+    <img src="images/project4.png">
+</div>
+
+</body>
+</html>

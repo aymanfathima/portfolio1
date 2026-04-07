@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman Fathima | Full Stack Developer</title>
+    
+    <!-- CSS & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --blue: #3b82f6; --dark: #09090b; }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--dark);
+            color: white;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* 1. FIXED: BACKGROUND PARTICLES VISIBILITY */
+        #bg-canvas { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: 0; /* Sit just above the body color */
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; /* Allows clicking buttons */
+        }
+
+        /* Ensure sections sit above the canvas but are semi-transparent */
+        section {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 2. FIXED: GRADIENT TEXT (THE BACKGROUND CLIP) */
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            color: transparent !important;
+            display: inline-block;
+        }
+
+        /* Modern Glass Cards */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass:hover {
+            border-color: var(--blue);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Nav Glassmorphism */
+        nav {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            z-index: 100;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+            display: inline-block;
+        }
+        .btn-primary:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 4px 25px rgba(59, 130, 246, 0.4); 
+        }
+
+        .screenshot-link {
+            color: #60a5fa;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold tracking-tighter">AF<span class="text-blue-500">.</span></a>
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Work</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+            <a href="mailto:aymnfathm12@gmail.com" class="btn-primary px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-wider">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="text-center" data-aos="zoom-out" data-aos-duration="1200">
+            <h4 class="text-blue-400 font-bold tracking-[0.5em] uppercase text-[10px] mb-6">Full Stack Developer</h4>
+            <h1 class="text-6xl md:text-[110px] font-extrabold tracking-tighter mb-8 leading-[1.1]">
+                AYMAN <br> <span class="gradient-text">FATHIMA.</span>
+            </h1>
+            <p class="max-w-xl mx-auto text-gray-400 text-lg md:text-xl mb-10 font-light">
+                I build scalable, high-performance web applications with a strong focus on user experience.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="btn-primary px-10 py-4 rounded-2xl font-bold">View Projects</a>
+                <a href="#contact" class="glass px-10 py-4 rounded-2xl font-bold hover:bg-white/5">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-16" data-aos="fade-up">Technical <span class="text-blue-500">Skills</span></h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="glass p-8" data-aos="fade-up">
+                    <h3 class="font-bold text-blue-400 mb-4 uppercase text-xs tracking-widest">Frontend</h3>
+                    <p class="text-gray-400 text-sm">React.js, JS (ES6+), HTML5, CSS3</p>
+                </div>
+                <div class="glass p-8" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-bold text-purple-400 mb-4 uppercase text-xs tracking-widest">Backend</h3>
+                    <p class="text-gray-400 text-sm">Node.js, Express.js, Laravel (PHP)</p>
+                </div>
+                <div class="glass p-8" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-green-400 mb-4 uppercase text-xs tracking-widest">Database</h3>
+                    <p class="text-gray-400 text-sm">MySQL, MongoDB</p>
+                </div>
+                <div class="glass p-8" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-bold text-orange-400 mb-4 uppercase text-xs tracking-widest">Tools</h3>
+                    <p class="text-gray-400 text-sm">Git, Figma, AWS Basics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-16" data-aos="fade-right">Featured <span class="text-blue-500">Work</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project Card 1 -->
+                <div class="glass p-10 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[9px] bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest">MERN Stack</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 italic">Airline Reservation System</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Full-stack platform with authentication, booking management, and admin controls.</p>
+                        <!-- LINK TO SCREENSHOTS: Replace '#' with your Google Drive/Imgur/GitHub link -->
+                        <a href="project-gallery.html" class="screenshot-link">
+                            <i class="fas fa-image"></i> View Project Gallery
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="glass p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[9px] bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest">Laravel</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 italic">School LMS System</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Customized system automating student and course management for institutions.</p>
+                        <a href="project2-gallery.html" target="_blank" class="screenshot-link">
+                            <i class="fas fa-image"></i> View Project Gallery
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="glass p-10 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[9px] bg-green-500/20 text-green-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest">Java Android</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 italic">To-Do Mobile App</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Efficient task management with categorization and smart reminders.</p>
+                        <a href="project3-gallery.html" target="_blank" class="screenshot-link">
+                            <i class="fas fa-image"></i> View Project Gallery
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="glass p-10 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[9px] bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full font-bold uppercase tracking-widest">WordPress</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 italic">Pizza Restaurant Site</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Fully responsive website designed for customer engagement and menu browsing.</p>
+                        <a href="project4-gallery.html" target="_blank" class="screenshot-link">
+                            <i class="fas fa-image"></i> View Project Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 px-6 bg-black/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-5xl font-extrabold mb-8 underline decoration-blue-500 underline-offset-[12px]">About Me</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        I’m a <span class="text-white font-bold">Full Stack Developer</span> currently pursuing my degree at the <span class="text-white font-bold">University of Colombo</span>.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        I specialize in creating robust backend systems and modern interfaces that provide seamless user experiences.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="glass p-10 text-center">
+                        <i class="fas fa-graduation-cap text-4xl text-blue-500 mb-4"></i>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">UOC Student</p>
+                    </div>
+                    <div class="glass p-10 text-center">
+                        <i class="fas fa-award text-4xl text-purple-500 mb-4"></i>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">CCNA Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-5xl font-extrabold mb-12">Let's <span class="gradient-text">Connect.</span></h2>
+            <div class="glass p-12">
+                <div class="grid md:grid-cols-2 gap-10 text-left mb-12">
+                    <div>
+                        <p class="text-blue-500 font-bold text-[10px] uppercase mb-2">Email</p>
+                        <a href="mailto:aymnfathm12@gmail.com" class="text-xl font-bold ">aymnfathm12@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="text-blue-500 font-bold text-[10px] uppercase mb-2">Phone</p>
+                        <p class="text-xl font-bold">+94 750352001</p>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-8 border-t border-white/5 pt-8">
+                   <a href="https://www.linkedin.com/in/ayman-fathima-ayman12" target="_blank" rel="noopener noreferrer" class="text-2xl text-gray-500 hover:text-white">
+  <i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://github.com/aymanfathima" target="_blank" class="text-2xl text-gray-500 hover:text-white">
+  <i class="fab fa-github"></i>
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Particle Logic
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vX = (Math.random() - 0.5) * 0.5;
+                this.vY = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+            }
+            update() {
+                this.x += this.vX; this.y += this.vY;
+                if(this.x < 0 || this.x > canvas.width) this.vX *= -1;
+                if(this.y < 0 || this.y > canvas.height) this.vY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            particles = [];
+            for(let i=0; i<80; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+    </script>
+</body>
+</html>
